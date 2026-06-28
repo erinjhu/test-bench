@@ -1,0 +1,24 @@
+## Test Bench
+
+**Objectives:** improve skills in Pytest, CI/CD, HIL, and testing for embedded systems
+
+### Documentation
+
+- [CI/CD](docs/cicd.md)
+- [Docker Containerization](docs/docker.md)
+- [Python Test Framework](docs/framework.md)
+- [Daily Progress](docs/daily.md)
+
+### Instructions
+
+1. Build and run the Docker container. 
+
+Notes:
+- `-t`: shows container's output in the host terminal
+- `-rm`: automatically delete the container when it is done running
+- After making changes, build the container before running it
+
+```
+docker build -t test-bench .
+docker run --rm test-bench
+```
