@@ -46,3 +46,22 @@ Technical Concepts
 
 Development Process
 - Debugging: instead of adding more code to fix it, find the root cause
+
+
+
+## Testing Types
+
+### Unit
+
+- Tests for functions in isolation
+- GTest for firmware
+    - Since GTest can run in a C file and STM32 code is in C
+
+### Functional
+
+### Regression
+
+### Integration
+
+- Tests for systems interacting with each other
+- 

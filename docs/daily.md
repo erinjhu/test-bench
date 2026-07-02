@@ -4,6 +4,10 @@
 
 - Implement the test in the UML
 
+### 7/2
+
+- Planning structure for test bench; deciding on what tools to use for unit, regression, functional, integration tests
+
 ### 7/1
 
 - Outline specifications document

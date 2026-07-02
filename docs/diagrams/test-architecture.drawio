@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="-3-gpDusYLqyBPnEbSHL">
+    <mxGraphModel dx="1045" dy="1009" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Regression Tests:&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Run all below tests after adding a new feature&lt;/span&gt;" vertex="1">
+          <mxGeometry height="552" width="678" x="-197" y="-31" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Black Box / End-to-End Tests: &lt;/b&gt;verify that the outputs meet expected outputs for various inputs; run tests from a user perspective&lt;/div&gt;" vertex="1">
+          <mxGeometry height="364" width="303" x="153" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;White Box Tests: &lt;/b&gt;verify that the internal logic meets the specifications" vertex="1">
+          <mxGeometry height="446" width="303" x="-174" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Code Coverage: &lt;/b&gt;how much of the source code was executed" vertex="1">
+          <mxGeometry height="112" width="270" x="-157.5" y="121" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="Integration Tests&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="79" width="270" x="169.5" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Unit Tests: &lt;/b&gt;test a function in isolation" vertex="1">
+          <mxGeometry height="178" width="868" x="-164" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Functional Tests: &lt;/b&gt;verify that the final output meets the requirement" vertex="1">
+          <mxGeometry height="64" width="270" x="169.5" y="258" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Boundary / Edge Cases: &lt;/b&gt;test 0, negative inputs, large inputs&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="-142" y="604.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Exceptions / Errors:&lt;/b&gt; intentionally cause a failure to check if the code can catch it&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="-3" y="604.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;State Mutation:&lt;/b&gt;&amp;nbsp;check if an internal variable was updated/changed&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="136" y="604.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Null / Empty Data:&lt;/b&gt;&amp;nbsp;see how system reacts to empty data&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="275" y="604.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Timing / Timeouts:&lt;/b&gt;&amp;nbsp;ensure functions stop after timeout, preventing an infinite loop&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="414" y="604.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Behaviour / Mocks:&lt;/b&gt;&amp;nbsp;count function calls or verify payloads&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="553" y="604.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;div&gt;&lt;b&gt;Hardware in the Loop (HIL): &lt;/b&gt;test the actual hardware but simulate the environment&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Pytest&lt;/li&gt;&lt;li&gt;Test a fake user interacting with the system&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="364" width="303" x="-164" y="768" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="Integration Tests&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="79" width="270" x="-147.5" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="Functional Tests&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="79" width="270" x="-147.5" y="978" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Static Code Analysis: &lt;/b&gt;test code for bugs, security vulnerabilities, performance issues, or coding standard violations without executing it" vertex="1">
+          <mxGeometry height="136" width="270" x="-157.5" y="254" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Functional Tests: &lt;/b&gt;verify that the final output meets the requirement" vertex="1">
+          <mxGeometry height="64" width="270" x="-153" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;b&gt;Code Coverage: &lt;/b&gt;how much of the source code was executed" vertex="1">
+          <mxGeometry height="178" width="868" x="317" y="863" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Statements: &lt;/b&gt;lines of code&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="339" y="912.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Branch / Decision:&lt;/b&gt;&amp;nbsp;test all possible paths the program can run (e.g. A &amp;amp;&amp;amp; B == T, A &amp;amp;&amp;amp; B == F)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="478" y="912.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Condition:&lt;/b&gt;&amp;nbsp;test possible paths for sub conditions (e.g. A &amp;amp;&amp;amp; B, test when A == T, B == F then A == F, B == T&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="617" y="912.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Null / Empty Data:&lt;/b&gt;&amp;nbsp;see how system reacts to empty data&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="756" y="912.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Timing / Timeouts:&lt;/b&gt;&amp;nbsp;ensure functions stop after timeout, preventing an infinite loop&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="895" y="912.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Behaviour / Mocks:&lt;/b&gt;&amp;nbsp;count function calls or verify payloads&lt;/div&gt;" vertex="1">
+          <mxGeometry height="99.5" width="120" x="1034" y="912.5" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;verticalAlign=top;spacingTop=10;" value="&lt;div&gt;&lt;b&gt;Modified Condition / Decision Coverage (MC/DC):&amp;nbsp; &lt;/b&gt;a method of making a group of test cases that will verify how each sub-condition affects the full condition without needing a full truth table for every possible combination&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;To create the list of test cases, f&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;or each sub-condition, write two test cases: one where that sub-condition is true and one where that sub-condition is false. Choose the value of the other sub-conditions such that the final condition only changes when the focused sub-condition changes.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Creates n + 1 test cases where n is the number of sub-conditions.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="364" width="303" x="181" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="Test code coverage using &lt;b&gt;unit tests&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="234" x="-142" y="178" as="geometry" />
+        </mxCell>
+        <mxCell id="x8LFrxhM3UUDlW-kx8cY-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="Do static code analysis using &lt;b&gt;unit tests&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="234" x="-142" y="331" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
