@@ -52,7 +52,22 @@ STM32-F401RE
 ## 3. Communication Protocol
 ### 3.1 Transport Layer (UART Settings: Baud, Parity, Stop Bits)
 ### 3.2 Packet Structure (Header, Length, Payload, Checksum)
-### 3.3 Command Set (Table of Commands the PC sends to the STM32)
+
+| Bit  | Hex ID | Description |
+| -------- | ------ | ----------- |
+| Start     | 0xAA   | Since 0b10101010 is easy to recognize            |
+| Command ID    | See section 3.3   |             |
+| Data    | ...   |             |
+| Checksum | Start + ID   |             |
+
+### 3.3 Command Set 
+
+| Command  | Hex ID | Description |
+| -------- | ------ | ----------- |
+| PING     | 0x01   |             |
+| RESET    | 0x02   |             |
+| GET_VOLT | 0x03   |             |
+
 
 ## 4. Operational Logic
 ### 4.1 System State Machine (Diagram and Description)

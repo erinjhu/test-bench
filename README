@@ -1,6 +1,6 @@
 ## Test Bench
 
-**Objectives:** improve skills in Pytest, CI/CD, HIL, and testing for embedded systems
+**Objectives:** improve skills in Pytest, CI/CD, containerization, automation, HIL, and testing for embedded systems
 
 ### Documentation
 
@@ -16,9 +16,10 @@
 Notes:
 - `-t`: shows container's output in the host terminal
 - `-rm`: automatically delete the container when it is done running
+- `--device=/dev/ttyUSB0:/dev/ttyUSB0`: let the container access the hardware port 
 - After making changes, build the container before running it
 
 ```
 docker build -t test-bench .
-docker run --rm test-bench
+docker run --device=/dev/ttyUSB0:/dev/ttyUSB0 --rm test-bench
 ```

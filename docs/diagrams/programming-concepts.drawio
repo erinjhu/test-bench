@@ -1,0 +1,59 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="PRQ9EFAJwpAabTLItvj5">
+    <mxGraphModel dx="1464" dy="1054" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vrhxUshp-3JHaYwJP9On-11" edge="1" parent="1" source="vrhxUshp-3JHaYwJP9On-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-1" parent="1" style="whiteSpace=wrap;html=1;" value="mutex" vertex="1">
+          <mxGeometry height="60" width="120" x="560" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-12" edge="1" parent="1" source="vrhxUshp-3JHaYwJP9On-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-13" edge="1" parent="1" source="vrhxUshp-3JHaYwJP9On-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-14" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="370" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-15" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1090" y="370" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-2" parent="1" style="whiteSpace=wrap;html=1;" value="semaphore" vertex="1">
+          <mxGeometry height="60" width="120" x="1030" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-3" parent="1" style="whiteSpace=wrap;html=1;" value="set number of available slots" vertex="1">
+          <mxGeometry height="80" width="160" x="790" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-4" parent="1" style="whiteSpace=wrap;html=1;" value="signaling between tasks (e.g. producer-consumer pattern)" vertex="1">
+          <mxGeometry height="80" width="160" x="990" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-5" parent="1" style="whiteSpace=wrap;html=1;" value="different threads unlock and lock a resource (e.g. ISR signals to unblock a thread)" vertex="1">
+          <mxGeometry height="80" width="160" x="1180" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-6" parent="1" style="whiteSpace=wrap;html=1;" value="rate limiting; cap the number of concurrent operations" vertex="1">
+          <mxGeometry height="80" width="160" x="1370" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-7" parent="1" style="whiteSpace=wrap;html=1;" value="one resource" vertex="1">
+          <mxGeometry height="80" width="160" x="540" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-9" edge="1" parent="1" source="vrhxUshp-3JHaYwJP9On-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-10" edge="1" parent="1" source="vrhxUshp-3JHaYwJP9On-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="vrhxUshp-3JHaYwJP9On-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vrhxUshp-3JHaYwJP9On-8" parent="1" style="whiteSpace=wrap;html=1;" value="shared resources" vertex="1">
+          <mxGeometry height="60" width="120" x="767" y="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
