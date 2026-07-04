@@ -9,6 +9,8 @@
 
 - Script to build and run Docker container in one command
 - Refactor [parser](../src/parser.py) to use hash map instead of if statements for command ids
+- Was failing the workflow because it was trying to run cppcheck but I didn't add any C files yet. Fixed by adding condition to yml
+- Test for validating the checksum was returning Index error because it was trying to calculate the checksum for the case where the command is invalid and there are no bytes to make the checksum out of, so the checksum is empty. Fixed by adding a separate if statement.
 
 ### 7/3
 

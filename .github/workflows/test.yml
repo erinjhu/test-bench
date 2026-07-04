@@ -9,7 +9,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: docker build -t test-bench-ci .
       - run: docker run --rm test-bench-ci ruff check src/ tests/ # lint for python
-      - run: docker run --rm test-bench-ci cppcheck --enable=all src/ # static analysis for c
+      - name: Run cppcheck
+        if: ${{ hashFiles('**/*.c', '**/*.h', '**/*.cpp', '**/*.hpp', '**/*.cc', '**/*.cxx') != '' }}
+        run: docker run --rm test-bench-ci cppcheck --enable=all src/ # static analysis for c
 
   build-and-test:
     needs: lint-and-analyze

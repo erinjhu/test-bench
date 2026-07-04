@@ -38,7 +38,9 @@ For testing the GitHub Actions workflow locally before pushing it.
 2. Run act
 
     ```
-    act -v
+    act -v -j <job-name> -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
     ```
 
-    When it asks you to choose a default image, choose Medium or Large (since Small is too small for gcc and python).
+    Notes:
+    - `-P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest`: choose the medium image
+    - `-v`: show verbose logs

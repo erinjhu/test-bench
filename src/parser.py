@@ -1,4 +1,5 @@
 class Parser:
+
     """
     Translates human commands to binary packets.
     """
@@ -7,6 +8,7 @@ class Parser:
         "RESET":0x02,
         "GET_VOLT":0x03,
     }
+
     def encode(self, command_name):
         """
         Converts command name into a list of bytes.
@@ -23,3 +25,6 @@ class Parser:
             return[]
         checksum = (start + cmd_id) & 0xFF # 0xFF --> 1 byte
         return [start, cmd_id, checksum]
+    
+    def checksum(self, packet_bytes):
+        return sum(packet_bytes) & 0xFF
