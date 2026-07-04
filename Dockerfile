@@ -2,6 +2,10 @@
 FROM python:3.10-slim 
 # /app is the working directory in the docker ontainer
 WORKDIR /app 
+# 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends cppcheck \
+    && rm -rf /var/lib/apt/lists/*
 # copy the requirements.txt file into /app
 COPY requirements.txt . 
 # --no-cache-dir: prevent from writing packages to local cache to minimize the size

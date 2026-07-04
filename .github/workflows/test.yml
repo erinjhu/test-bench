@@ -2,15 +2,19 @@ name: HIL Test Pipeline
 on: [push, pull_request]
 
 jobs:
-  build-and-test:
+
+  lint-and-analyze:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run Tests
-        run: pytest
+      - run: docker build -t test-bench-ci .
+      - run: docker run --rm test-bench-ci ruff check src/ tests/ # lint for python
+      - run: docker run --rm test-bench-ci cppcheck --enable=all src/ # static analysis for c
+
+  build-and-test:
+    needs: lint-and-analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t test-bench-ci .
+      - run: docker run --rm test-bench-ci pytest

@@ -4,22 +4,41 @@
 
 ### Documentation
 
+Separate pages for more details on implementation
+
 - [CI/CD](docs/cicd.md)
 - [Docker Containerization](docs/docker.md)
 - [Python Test Framework](docs/framework.md)
 - [Daily Progress](docs/daily.md)
 
-### Instructions
+### Setup
 
-1. Build and run the Docker container. 
+Setting up and using each component
 
-Notes:
-- `-t`: shows container's output in the host terminal
-- `-rm`: automatically delete the container when it is done running
-- `--device=/dev/ttyUSB0:/dev/ttyUSB0`: let the container access the hardware port 
-- After making changes, build the container before running it
+- [Docker container](#docker-container)
+- [act](#act)
 
-```
-docker build -t test-bench .
-docker run --device=/dev/ttyUSB0:/dev/ttyUSB0 --rm test-bench
-```
+#### Docker Container
+
+
+
+#### act
+
+For testing the GitHub Actions workflow locally before pushing it.
+
+1. Install act and check if it worked
+
+    ```
+    curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+    ```
+    ```
+    act --version
+    ```
+
+2. Run act
+
+    ```
+    act -v
+    ```
+
+    When it asks you to choose a default image, choose Medium or Large (since Small is too small for gcc and python).
