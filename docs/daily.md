@@ -2,8 +2,14 @@
 
 ### Next session
 
-- Implement the test in the UML
+- Fix failing tests
 
+### 7/5
+
+- Wrote new tests but forgot to name them test_{test_name} so they weren't even running
+- Added tests for payload length and payloads to accomodate read and write commands
+- Parametrize data for set commands was not matching the expected parameters, was leading to error
+- Added separate file for command IDs
 
 ### 7/4
 

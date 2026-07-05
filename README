@@ -20,7 +20,9 @@ Setting up and using each component
 
 #### Docker Container
 
-
+1. Open Docker desktop
+2. Go to WSL
+3. Run `./run.sh`
 
 #### act
 

@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy code from current host directory into /app in container
 COPY . . 
 # will run "pytest tests/" in the container
-CMD ["pytest", "tests/"]
+CMD ["pytest", "tests/", "--color=yes"]
