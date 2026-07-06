@@ -15,8 +15,8 @@ Separate pages for more details on implementation
 
 Setting up and using each component
 
-- [Docker container](#docker-container)
-- [act](#act)
+- [Docker container](#docker-container): 
+- [act](#act): test CI workflow locally before pushing
 
 #### Docker Container
 

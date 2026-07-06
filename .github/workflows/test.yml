@@ -10,9 +10,13 @@ jobs:
       - run: docker build -t test-bench-ci .
       - run: docker run --rm test-bench-ci ruff check src/ tests/ # lint for python
       - name: Run cppcheck
-        if: ${{ hashFiles('**/*.c', '**/*.h', '**/*.cpp', '**/*.hpp', '**/*.cc', '**/*.cxx') != '' }}
-        run: docker run --rm test-bench-ci cppcheck --enable=all board/ # static analysis for c
-
+        if: ${{ hashFiles('**/*.c','**/*.cpp', '**/*.cc', '**/*.cxx') != '' }}
+        # mount the repository folder
+          # --rm: delete container after it exits
+          # -v "${{ github.workspace }}:/work": mount repo folder into container
+          # -w /work: set working directory inside container to /work
+        # run: docker run --rm -v "${{ github.workspace }}:/work" -w /work test-bench-ci cppcheck --enable=all board/
+        run: docker run --rm test-bench-ci cppcheck --enable=all board/
   build-and-test:
     needs: lint-and-analyze
     runs-on: ubuntu-latest

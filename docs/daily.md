@@ -12,6 +12,13 @@
 - `encode` method for set commands was not adding the data length
 - validate payload input for `encode`
 - Fixed `TypeError` by using `extend()` instead of `append()` to handle empty payloads
+- [HIL Test Pipeline/lint-and-analyze]   🐳  docker exec cmd=[bash -e /var/run/act/workflow/3] user= workdir=
+[HIL Test Pipeline/lint-and-analyze] [DEBUG] Exec command '[bash -e /var/run/act/workflow/3]'
+[HIL Test Pipeline/lint-and-analyze] [DEBUG] Working directory '/mnt/c/Users/Hu/Desktop/projects/test-bench'
+- Error ```
+| cppcheck: error: could not find or open any of the paths given.
+[HIL Test Pipeline/lint-and-analyze]   ❌  Failure - Main Run cppcheck [3.319853458s]
+``` Issue was because cppcheck was looking for c files but I only had a .h file. Fixed by only running cppcheck if there are c files.
 
 ### 7/5
 
