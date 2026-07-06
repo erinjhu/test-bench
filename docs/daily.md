@@ -3,6 +3,15 @@
 ### Next session
 
 - Fix failing tests
+- Send unsigned bytes, implement offset or cast with 2's complement
+- add tests to validate payload parameter validation 
+
+### 7/6
+
+- Failed `test_encode_get_command` because there is no associated ID for any invalid commands (commands other than the ones in `COMMAND_IDS` of `constants.py`). Changed so that ID = 0 for invalid commands.
+- `encode` method for set commands was not adding the data length
+- validate payload input for `encode`
+- Fixed `TypeError` by using `extend()` instead of `append()` to handle empty payloads
 
 ### 7/5
 

@@ -15,14 +15,14 @@ get_commands_data = [
 
 set_commands_data = [
     # (command name, id, payload length, payload, checksum)
-    ("SET_PWM", Protocol.COMMAND_IDS["SET_PWM"], 1, 0x50, 0x54),
+    ("SET_PWM", Protocol.COMMAND_IDS["SET_PWM"], 1, 0x50, 0xFF),
 ]
 
 @pytest.mark.parametrize("command, expected_id", get_commands_data)
 def test_encode_get_command(command, expected_id):
     parser = Parser()
-    encoded_result = parser.encode(command)
-    assert encoded_result == expected_id
+    encoded_result = parser.encode(command, payload=None)
+    assert encoded_result[Protocol.PACKET_INDEX_NUM["ID"]] == expected_id
     # [:-1] - everything but the last item
     # [-1] - last item
     if encoded_result:
@@ -32,9 +32,9 @@ def test_encode_get_command(command, expected_id):
 def test_encode_set_command(cmd_name, expected_id, expected_length, payload, expected_checksum):
     parser = Parser()
     packet = parser.encode(cmd_name, payload=payload)
-    assert packet[1] == expected_id
-    assert packet[2] == len(packet[3:-1]) # [include first index, exclude last index]
-    assert packet[-1] == expected_checksum
+    assert packet[Protocol.PACKET_INDEX_NUM["ID"]] == expected_id
+    assert packet[Protocol.PACKET_INDEX_NUM["DATA_LENGTH"]] == len(packet[3:-1]) # [include first index, exclude last index]
+    assert packet[Protocol.PACKET_INDEX_NUM["CHECKSUM"]] == expected_checksum
 
 # tests todo later
     # receive commands
