@@ -40,7 +40,11 @@ For testing the GitHub Actions workflow locally before pushing it.
 2. Run act
 
     ```
-    act -v -j <job-name> -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
+    act -v -j lint-and-analyze -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
+    ```
+
+    ```
+    act -v -j build-and-test -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
     ```
 
     Notes:
