@@ -2,6 +2,9 @@
 
 **Objectives:** improve skills in Pytest, CI/CD, containerization, automation, HIL, and testing for embedded systems
 
+**Features:**
+- Encode and decode commands to parse and send UART messages between host computer and target
+
 ### Documentation
 
 Separate pages for more details on implementation

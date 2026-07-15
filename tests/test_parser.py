@@ -1,8 +1,9 @@
 import pytest
 from src.parser import Parser
 from src.constants import Protocol
+from src.exceptions import InvalidCommandError, ChecksumMismatchError
 
-# protocol: [START, ID, LENGTH, DATA, CHECKSUM]
+# protocol: [START BYTE, ID BYTE, LENGTH BYTE, DATA BYTES, CHECKSUM BYTE]
 
 # list (ordered, duplicates allowed): []
 # set/dictionary (unordered, unique elements): {}
@@ -15,8 +16,19 @@ get_commands_data = [
 
 set_commands_data = [
     # (command name, id, payload length, payload, checksum)
+    # case: payload length 1
     ("SET_PWM", Protocol.COMMAND_IDS["SET_PWM"], 1, 0x50, 0xFF),
 ]
+
+responses_data = [
+    # bytes object 1
+    # bytes object 2
+]
+
+
+# ====================================================================
+# Valid Encode Commands
+# ====================================================================
 
 @pytest.mark.parametrize("command, expected_id", get_commands_data)
 def test_encode_get_command(command, expected_id):
@@ -36,6 +48,51 @@ def test_encode_set_command(cmd_name, expected_id, expected_length, payload, exp
     assert packet[Protocol.PACKET_INDEX_NUM["DATA_LENGTH"]] == len(packet[3:-1]) # [include first index, exclude last index]
     assert packet[Protocol.PACKET_INDEX_NUM["CHECKSUM"]] == expected_checksum
 
-# tests todo later
-    # receive commands
-    # encoding for a range of inputs: e.g. 0-100 for pwm
+ # encoding for a range of inputs: e.g. 0-100 for pwm
+
+   # case: longer payload
+
+
+# ====================================================================
+# Invalid Encode Commands
+# ====================================================================
+
+
+    # case: invalid start byte
+    # case: corrupted checksum
+    # case: incorrect length
+
+   
+
+# ====================================================================
+# Valid Decode Commands
+# ====================================================================
+
+@pytest.mark.parametrize("responses", responses_data)
+def test_decode(responses):
+
+    # read the first section
+        # assert that start byte is 0xAA
+        # assert that id == expected id
+        # assert that length == expected length
+
+    # read the data
+        # stm32 is little endian, system is big endian
+    assert 1
+
+# test case
+    # list of bytes
+    # expected s
+
+# decode function
+    # reads the start, id, length
+    # returns the response (remove the checksum)
+
+# ====================================================================
+# Invalid Decode Commands
+# ====================================================================
+
+    # case: invalid start byte
+    # case: corrupted checksum
+    # case: incorrect length
+

@@ -1,9 +1,12 @@
 class Protocol:
     SOF = 0xAA
 
-    
+    VALUES = {
+        "START_BYTE": 0xAA
+    }
 
     PACKET_INDEX_NUM = {
+        "START_BYTE": 0,
         "ID": 1,
         "DATA_LENGTH": 2,
         "CHECKSUM": -1

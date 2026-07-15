@@ -5,6 +5,13 @@
 - Fix failing tests
 - Send unsigned bytes, implement offset or cast with 2's complement
 - add tests to validate payload parameter validation 
+- Mock driver for the HIL
+
+### 7/15
+
+- Planning valid and invalid encode/decode test cases
+- Planning for HIL class
+- Created custom exceptions for clarity with error messages 
 
 ### 7/6
 

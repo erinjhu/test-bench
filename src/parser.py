@@ -28,7 +28,7 @@ class Parser:
             raise ValueError("payload must contain only byte values from 0 to 255")
         payload_length = len(payload)
 
-        start = 0xAA
+        start = Protocol.VALUES["START_BYTE"]
         if command_name not in Protocol.COMMAND_IDS:
             cmd_id = 0
         else:
@@ -41,3 +41,10 @@ class Parser:
     
     def checksum(self, bytes_to_sum):
         return sum(bytes_to_sum) & 0xFF
+    
+    """
+    Parses the bytes response received from the microcontroller
+    """
+    
+    def decode(self, response):
+        return
