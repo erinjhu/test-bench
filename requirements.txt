@@ -3,3 +3,4 @@ pyserial
 ruff
 pytest
 mypy
+types-pyserial
