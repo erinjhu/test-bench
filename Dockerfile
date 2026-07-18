@@ -12,6 +12,6 @@ COPY requirements.txt .
 # -r: tell pip to read requirements.txt for packages to install
 RUN pip install --no-cache-dir -r requirements.txt
 # copy code from current host directory into /app in container
-COPY . . 
+COPY . . .
 # will run "pytest tests/" in the container
 CMD ["pytest", "tests/", "--color=yes"]

@@ -19,13 +19,21 @@ Separate pages for more details on implementation
 Setting up and using each component
 
 - [Docker container](#docker-container): 
-- [act](#act): test CI workflow locally before pushing
+- [Linting](#linting-and-analysis): test linting/analysis before running the full CI because the CI is kind of slow
+- [act](#act): test the full CI workflow locally before pushing
 
 #### Docker Container
 
 1. Open Docker desktop
-2. Go to WSL
-3. Run `./run.sh`
+2. `wsl`
+3. `./run.sh`
+
+#### Linting and Analysis
+
+1. `wsl`
+2. If you haven't created a Python virtual environment already, do `python3 -m venv .venv`
+3. `source .venv/bin/activate`
+4. Do `make ci-check`. This runs the 
 
 #### act
 

@@ -2,25 +2,25 @@ name: HIL Test Pipeline
 on: [push, pull_request]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-  lint-and-analyze:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: docker build -t test-bench-ci .
-      - run: docker run --rm test-bench-ci ruff check src/ tests/ # lint for python
-      - name: Run cppcheck
-        if: ${{ hashFiles('**/*.c','**/*.cpp', '**/*.cc', '**/*.cxx') != '' }}
-        # mount the repository folder
-          # --rm: delete container after it exits
-          # -v "${{ github.workspace }}:/work": mount repo folder into container
-          # -w /work: set working directory inside container to /work
-        # run: docker run --rm -v "${{ github.workspace }}:/work" -w /work test-bench-ci cppcheck --enable=all board/
-        run: docker run --rm test-bench-ci cppcheck --enable=all board/
-  build-and-test:
-    needs: lint-and-analyze
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: docker build -t test-bench-ci .
-      - run: docker run --rm test-bench-ci pytest
+      - name: Set up Python
+        uses: actions/setup-python@v5 # download and install python on the GitHub Actions virtual machine for CI
+        with:
+          python-version: '3.12' # recent and stable
+
+      - name: Install dependencies
+        run: | # puts the next line on multiple lines
+          pip install mypy pytest ruff
+        
+      - name: Run Linter (Ruff)
+        run: ruff check .
+
+      - name: Run Type Checker (Mypy)
+        run: mypy .
+
+      - name: Run Tests (Pytest)
+        run: pytest tests/

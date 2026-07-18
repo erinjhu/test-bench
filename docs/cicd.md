@@ -1,5 +1,21 @@
 ## CI/CD Pipeline
 
+### Mypy Static Type Checking
+
+#### What it does
+- Add and check type hints to make code cleaner
+- Flags types mismatches
+
+#### Benefits
+- More readable; can show types in the function signatures
+- Refactoring; when changing a data structure, you can find all the places in the code that the change affects
+
+#### How to use
+
+### Ruff Linter
+
+
+
 ### YAML File
 
 ```yaml

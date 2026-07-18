@@ -12,6 +12,7 @@
 
 - Add skip for HIL tests since not implemented yet
 - Applied don't repeat yourself (DRY) principle for deciding which test cases to group for encode/decode commands
+- Refactor `test_encode` in `test_parser.py'
 
 ### 7/15
 
