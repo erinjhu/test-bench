@@ -1,18 +1,15 @@
 import pytest
 from src.parser import Parser
 from src.constants import Protocol
-from src.exceptions import InvalidCommandError, ChecksumMismatchError
-
+from src.exceptions import (
+    InvalidCommandError, 
+    ChecksumMismatchError,
+    InvalidStartByteError
+)
 # protocol: [START BYTE, ID BYTE, LENGTH BYTE, DATA BYTES, CHECKSUM BYTE]
 
 # list (ordered, duplicates allowed): []
 # set/dictionary (unordered, unique elements): {}
-
-get_commands_data = [
-    ("INVALID_COMMAND", Protocol.COMMAND_IDS["INVALID_GET"]),
-    ("PING", Protocol.COMMAND_IDS["PING"]),
-    ("GET_VOLT", Protocol.COMMAND_IDS["GET_VOLT"]),
-]
 
 set_commands_data = [
     # (command name, id, payload length, payload, checksum)
@@ -25,45 +22,42 @@ responses_data = [
     # bytes object 2
 ]
 
+# "command, expected_id, payload_input"
+encode_commands_data = [
+    # Control
+    ("INVALID_COMMAND", Protocol.COMMAND_IDS["INVALID_GET"], None),
+    ("PING", Protocol.COMMAND_IDS["PING"], None),
+    # Telemetry/Read
+    ("GET_VOLT", Protocol.COMMAND_IDS["GET_VOLT"], None),
+    # Configuration/Write
+    ("SET_PWM", Protocol.COMMAND_IDS["SET_PWM"], 0x50),
+]
+
 
 # ====================================================================
-# Valid Encode Commands
+# Encode Commands
 # ====================================================================
 
-@pytest.mark.parametrize("command, expected_id", get_commands_data)
-def test_encode_get_command(command, expected_id):
+# expected: [start, cmd_id, data_length, payload, checksum]
+
+@pytest.mark.parametrize("command, expected_id, payload_input", encode_commands_data)
+def test_encode_get_command(command, expected_id, payload_input):
     parser = Parser()
-    encoded_result = parser.encode(command, payload=None)
+    encoded_result = parser.encode(command, payload=payload_input)
+    assert encoded_result[Protocol.PACKET_INDEX_NUM["START_BYTE"]] == Protocol.VALUES["START_BYTE"]        
     assert encoded_result[Protocol.PACKET_INDEX_NUM["ID"]] == expected_id
-    # [:-1] - everything but the last item
-    # [-1] - last item
+    if(payload_input == None): # for get commands
+        assert encoded_result[Protocol.PACKET_INDEX_NUM["DATA_LENGTH"]] == 0
+    else: # for set commands
+        assert encoded_result[Protocol.PACKET_INDEX_NUM["DATA_LENGTH"]] == len(encoded_result[Protocol.PACKET_INDEX_NUM["PAYLOAD"]:Protocol.PACKET_INDEX_NUM["CHECKSUM"]])
+    assert encoded_result[Protocol.PACKET_INDEX_NUM["CHECKSUM"]] == sum(encoded_result[:Protocol.PACKET_INDEX_NUM["CHECKSUM"]])
+    # [:-1] - everything but the last item, [-1] - last item
     if encoded_result:
-        assert parser.checksum(encoded_result[:-1]) == encoded_result[-1]
-
-@pytest.mark.parametrize("cmd_name, expected_id, expected_length, payload, expected_checksum", set_commands_data)
-def test_encode_set_command(cmd_name, expected_id, expected_length, payload, expected_checksum):
-    parser = Parser()
-    packet = parser.encode(cmd_name, payload=payload)
-    assert packet[Protocol.PACKET_INDEX_NUM["ID"]] == expected_id
-    assert packet[Protocol.PACKET_INDEX_NUM["DATA_LENGTH"]] == len(packet[3:-1]) # [include first index, exclude last index]
-    assert packet[Protocol.PACKET_INDEX_NUM["CHECKSUM"]] == expected_checksum
+        assert parser.checksum(encoded_result[:Protocol.PACKET_INDEX_NUM["CHECKSUM"]]) == encoded_result[Protocol.PACKET_INDEX_NUM["CHECKSUM"]]
 
  # encoding for a range of inputs: e.g. 0-100 for pwm
-
    # case: longer payload
-
-
-# ====================================================================
-# Invalid Encode Commands
-# ====================================================================
-
-
-    # case: invalid start byte
-    # case: corrupted checksum
-    # case: incorrect length
-
    
-
 # ====================================================================
 # Valid Decode Commands
 # ====================================================================

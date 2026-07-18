@@ -6,6 +6,12 @@
 - Send unsigned bytes, implement offset or cast with 2's complement
 - add tests to validate payload parameter validation 
 - Mock driver for the HIL
+- Test for control commands (ping, reset) probably do with HIL
+
+### 7/18
+
+- Add skip for HIL tests since not implemented yet
+- Applied don't repeat yourself (DRY) principle for deciding which test cases to group for encode/decode commands
 
 ### 7/15
 

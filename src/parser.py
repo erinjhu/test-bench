@@ -17,16 +17,21 @@ class Parser:
         Returns:
             list: A list of bytes [START, ID, CHECKSUM] or empty list if invalid
         """
-        # check if payload is valid
         if payload is None:
             payload = []
-        elif isinstance(payload, int): # check if payload is a single int
-            payload = [payload] # format as a list
-        elif not isinstance(payload, list):
-            raise TypeError("payload must be an int or list of bytes")
-        if any(not isinstance(b, int) or b < 0 or b > 255 for b in payload):
-            raise ValueError("payload must contain only byte values from 0 to 255")
-        payload_length = len(payload)
+            payload_length = 0
+        else:   
+            if isinstance(payload, int): # check if payload is a single int
+                payload = [payload] # format as a list
+                payload_length = 1
+            elif not isinstance(payload, list):
+                raise TypeError("payload must be an int or list of bytes")
+            elif any(not isinstance(b, int) or b < 0 or b > 255 for b in payload):
+                raise ValueError("payload must contain only byte values from 0 to 255")
+            else:
+                payload_length = len(payload)
+            
+        
 
         start = Protocol.VALUES["START_BYTE"]
         if command_name not in Protocol.COMMAND_IDS:
