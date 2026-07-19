@@ -61,6 +61,20 @@ def test_encode(command, expected_id, payload_input):
     # reads the start, id, length
     # returns the response (remove the checksum)
 
+decode_commands_data = [
+    # response, expected_id
+    [[0xAA, 0x01, 0x00, 0xAB], 0x01], # ping
+    [[0xAA, 0x02, 0x00, 0xAC], 0x02] # reset
+]
+
+@pytest.mark.parametrize("response, expected_id", decode_commands_data)
+def test_decode_no_payload(response, expected_id):
+    parser = Parser()
+    decoded_result = parser.decode(response)
+    assert decoded_result["id"] == expected_id
+    assert decoded_result["payload"] == []
+
+
 # ====================================================================
 # Invalid Decode Commands
 # ====================================================================

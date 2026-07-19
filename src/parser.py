@@ -47,9 +47,25 @@ class Parser:
     def checksum(self, bytes_to_sum):
         return sum(bytes_to_sum) & 0xFF
     
-    """
-    Parses the bytes response received from the microcontroller
-    """
     
     def decode(self, response):
-        return
+        """
+        Parses the bytes response received from the microcontroller 
+
+        Args:
+            response (dictionary): The response received
+
+        Returns:
+            dictionary: Values {"command_id": int, "payload": list[int]}
+        """
+
+        length = response[Protocol.PACKET_INDEX_NUM["DATA_LENGTH"]]
+        payload_start = Protocol.PACKET_INDEX_NUM["PAYLOAD"]
+         # if length is 0, the payload will be []
+        payload = response[payload_start : payload_start + length]
+
+        return {
+            "id": response[Protocol.PACKET_INDEX_NUM["ID"]],
+            "payload": payload
+        }
+

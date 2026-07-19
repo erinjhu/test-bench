@@ -1,9 +1,9 @@
 lint:
-	ruff check --fix
-	python -m mypy .
+	.venv/bin/ruff check --fix
+	.venv/bin/python -m mypy .
 
 test:
-	pytest tests/
+	.venv/bin/pytest tests/
 
 # Run this one command locally
 ci-check: lint test

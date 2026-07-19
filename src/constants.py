@@ -2,7 +2,8 @@ class Protocol:
     SOF = 0xAA
 
     VALUES = {
-        "START_BYTE": 0xAA
+        "START_BYTE": 0xAA,
+        "SIZE_OF_EMPTY_PAYLOAD": 0x00
     }
 
     PACKET_INDEX_NUM = {
